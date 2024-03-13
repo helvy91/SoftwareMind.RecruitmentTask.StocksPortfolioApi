@@ -1,8 +1,9 @@
 ﻿using Mongo2Go;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using StocksPortfolio.Core.Domain.Entities;
 
-namespace StocksPortfolio.Infrastructure.Services
+namespace StocksPortfolio.Core.Domain
 {
     public class DataProviderService
     {
