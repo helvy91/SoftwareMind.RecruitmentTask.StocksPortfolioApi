@@ -1,17 +1,15 @@
-﻿using StocksPortfolio.Core.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using StocksPortfolio.Core.Domain.Entities;
 
 namespace StocksPortfolio.Core.Domain.Repositories
 {
     public interface IRepository<TEntity>
+        where TEntity : Entity
     {
-        Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<TEntity> GetAsync(Guid ownerId);
-        void Add(TEntity entity);
-        void Delete(TEntity entity);
+        Task AddAsync(TEntity entity);
+        Task UpdateAsync(TEntity entity);
+        Task DeleteAsync(TEntity entity);
+        Task<IQueryable<TEntity>> QueryAsync(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate);
+        Task<TEntity> GetAsync(ObjectId id);
     }
 }

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Core", "Sto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Infrastructure", "StocksPortfolio.Infrastructure\StocksPortfolio.Infrastructure.csproj", "{9368CB53-892A-4508-A506-3F6D8BF0C28B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksPortfolio.Tests", "StocksPortfolio.Tests\StocksPortfolio.Tests.csproj", "{908BDDF5-AA9C-462C-A097-CD5E0605D383}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9368CB53-892A-4508-A506-3F6D8BF0C28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9368CB53-892A-4508-A506-3F6D8BF0C28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9368CB53-892A-4508-A506-3F6D8BF0C28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{908BDDF5-AA9C-462C-A097-CD5E0605D383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{908BDDF5-AA9C-462C-A097-CD5E0605D383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{908BDDF5-AA9C-462C-A097-CD5E0605D383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{908BDDF5-AA9C-462C-A097-CD5E0605D383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

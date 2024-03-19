@@ -2,7 +2,8 @@
 {
     public class StockModel
     {
-        public decimal Price { get; set; }
+        public string Ticker { get; set; }
         public string Currency { get; set; }
+        public int NumberOfShares { get; set; }
     }
 }
