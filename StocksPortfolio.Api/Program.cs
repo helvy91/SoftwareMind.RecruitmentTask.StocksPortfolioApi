@@ -11,6 +11,7 @@ using StocksPortfolio.Infrastructure.Persistence.WebServices.Abstract;
 using System;
 using Mongo2Go.Helper;
 using StocksPortfolio.Infrastructure.Persistence.Repositories.Abstract;
+using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddAutoMapper(cfg =>
     cfg.CreateMap<Stock, StockModel>();
 });
 
+builder.Services.AddSingleton<IMemoryCache, MemoryCache>();
 builder.Services.AddTransient<IStocksService, StocksService>();
 builder.Services.AddTransient<ICurrencyRateService, CurrencyLayerApiService>();
 builder.Services.AddTransient<IMongoDbConfiguration, AppConfiguration>();

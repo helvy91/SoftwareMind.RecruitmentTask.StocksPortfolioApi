@@ -11,13 +11,13 @@ namespace StocksPortfolio.Infrastructure.Persistence.WebServices
     {
         private const string CacheKey = "CurrencyRatio";
 
-        private readonly MemoryCache _cache;
+        private readonly IMemoryCache _cache;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ICurrencyLayerApiConfiguration _config;
 
-        public CurrencyLayerApiService(ICurrencyLayerApiConfiguration config, IHttpClientFactory httpClientFactory)
+        public CurrencyLayerApiService(ICurrencyLayerApiConfiguration config, IHttpClientFactory httpClientFactory, IMemoryCache cache)
         {
-            _cache = new(new MemoryCacheOptions());
+            _cache = cache;
             _config = config;
             _httpClientFactory = httpClientFactory;
         }
