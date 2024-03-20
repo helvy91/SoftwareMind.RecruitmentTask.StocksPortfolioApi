@@ -41,7 +41,7 @@ namespace StocksPortfolio.Controllers
             return Ok(portfolio);
         }
 
-        [HttpGet("/value")]
+        [HttpGet("value")]
         public async Task<IActionResult> GetTotalPortfolioValue(string id, string currency)
         {
             if (!ObjectId.TryParse(id, out var objectId) || !Enum.TryParse<Currencies>(currency, out var currencyValue))
