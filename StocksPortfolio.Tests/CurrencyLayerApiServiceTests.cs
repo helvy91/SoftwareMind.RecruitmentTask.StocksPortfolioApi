@@ -1,8 +1,10 @@
 using Moq;
 using RichardSzalay.MockHttp;
 using StocksPortfolio.Core.Contracts;
+using Microsoft.Extensions.Caching.Memory;
 using StocksPortfolio.Infrastructure.Persistence.WebServices;
 using StocksPortfolio.Infrastructure.Persistence.Configuration.Abstract;
+using Microsoft.Extensions.Options;
 
 namespace StocksPortfolio.Tests
 {
@@ -30,7 +32,8 @@ namespace StocksPortfolio.Tests
             var client = new HttpClient(mockHttp);
             var factory = new Mock<IHttpClientFactory>();
             factory.Setup(x => x.CreateClient(string.Empty)).Returns(client).Verifiable();
-            var service = new CurrencyLayerApiService(config.Object, factory.Object);
+            var cache = new MemoryCache(new MemoryCacheOptions());
+            var service = new CurrencyLayerApiService(config.Object, factory.Object, cache);
 
             //ACT
             var rate = await service.GetCurrencyRateAsync(Currencies.USD, Currencies.EUR);
